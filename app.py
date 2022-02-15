@@ -2,7 +2,7 @@ import logging
 from flask import Flask, jsonify
 from elasticapm.contrib.flask import ElasticAPM
 
-output_filename = '/app/logs/app.log'
+output_filename = './logs/app.log'
 logging.getLogger('app')
 for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
