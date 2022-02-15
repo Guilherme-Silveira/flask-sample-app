@@ -4,7 +4,7 @@ from elasticapm.contrib.flask import ElasticAPM
 
 output_filename = './logs/app.log'
 logging.basicConfig(
-  filename=output_filename, 
+  #filename=output_filename, 
   level=logging.INFO,
   format='%{asctime}s %{name}s %{levelname}s %{message}s'
 )
