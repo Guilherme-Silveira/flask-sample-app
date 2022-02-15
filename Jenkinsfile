@@ -53,7 +53,7 @@ pipeline {
     }
     stage('deploy on kubernetes') {
       environment {
-        tag_version = '${env.BUILD_ID}'
+        tag_version = "${env.BUILD_ID}"
       }
       steps {
         container('kubectl') {
