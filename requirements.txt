@@ -1,0 +1,6 @@
+flask
+flask-sqlalchemy
+mysql-client
+bcrypt
+elastic-apm[flask]
+psutil
