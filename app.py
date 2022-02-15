@@ -4,6 +4,8 @@ from elasticapm.contrib.flask import ElasticAPM
 
 output_filename = '/app/logs/app.log'
 logging.getLogger('app')
+for handler in logging.root.handlers[:]:
+    logging.root.removeHandler(handler)
 logging.basicConfig(
   filename=output_filename, 
   level=logging.INFO, 
