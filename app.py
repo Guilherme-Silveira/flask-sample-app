@@ -3,13 +3,9 @@ from flask import Flask, jsonify
 from elasticapm.contrib.flask import ElasticAPM
 
 output_filename = './logs/app.log'
-logging.getLogger('app')
-for handler in logging.root.handlers[:]:
-    logging.root.removeHandler(handler)
 logging.basicConfig(
   filename=output_filename, 
-  level=logging.INFO, 
-  force=True, 
+  level=logging.INFO,
   format='%{asctime}s %{name}s %{levelname}s %{message}s'
 )
 
