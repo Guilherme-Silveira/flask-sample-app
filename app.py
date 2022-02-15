@@ -1,5 +1,15 @@
+import logging
 from flask import Flask, jsonify
 from elasticapm.contrib.flask import ElasticAPM
+
+output_filename = '/app/logs/app.log'
+logging.getLogger('app')
+logging.basicConfig(
+  filename=output_filename, 
+  level=logging.INFO, 
+  force=True, 
+  format='%{asctime}s %{name}s %{levelname}s %{message}s'
+)
 
 app = Flask(__name__)
 app.config['ELASTIC_APM'] = {
@@ -20,6 +30,7 @@ apm = ElasticAPM(app)
 
 @app.route('/')
 def home():
+  logging.info('home response was successful')
   return jsonify({'message': 'Hello World'})
 
 if __name__=='__main__':
