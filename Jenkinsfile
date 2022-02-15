@@ -59,7 +59,7 @@ pipeline {
         container('kubectl') {
           git url: 'https://github.com/Guilherme-Silveira/flask-sample-app.git', branch: 'main'
           withKubeConfig([credentialsId: 'kubeconfig', serverUrl: 'https://k3d-silveira-server-0:6443']) {
-            sh 'sed -i "s/{{tag}}/$tag_version/g" ./manifests'
+            sh 'sed -i "s/{{tag}}/$tag_version/g" ./manifests/app.yaml'
             sh 'kubectl apply -f ./manifests'
           }
         }
