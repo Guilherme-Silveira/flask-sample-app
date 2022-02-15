@@ -1,5 +1,16 @@
+import logging
+import os
 from flask import Flask, jsonify
 from elasticapm.contrib.flask import ElasticAPM
+
+if not os.path.isdir('./logs'):
+  os.mkdir('./logs')
+
+logging.basicConfig(
+  filename='./logs/app.log',
+  format='%(asctime)s - %(levelname)s - %(message)s',
+  level=logging.INFO
+  )
 
 app = Flask(__name__)
 app.config['ELASTIC_APM'] = {
@@ -20,6 +31,7 @@ apm = ElasticAPM(app)
 
 @app.route('/')
 def home():
+  logging.info('Home page request was successful')
   return jsonify({'message': 'Hello World'})
 
 if __name__=='__main__':
