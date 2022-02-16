@@ -19,7 +19,7 @@ app.config['ELASTIC_APM'] = {
 'SERVICE_NAME': 'python-flask-app',
 
 # Use if APM Server requires a secret token
-'SECRET_TOKEN': 'g2pnJXJ3vf2y3Y9t4D5837ZA',
+'SECRET_TOKEN': '8034saRuWS95fFw5MmD562iY',
 
 # Set the custom APM Server URL (default: http://localhost:8200)
 'SERVER_URL': 'http://apm-server-quickstart-apm-http:8200',
