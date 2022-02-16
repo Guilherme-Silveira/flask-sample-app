@@ -7,7 +7,7 @@ if not os.path.isdir('./logs'):
   os.mkdir('./logs')
 
 logging.basicConfig(
-  filename='./logs/app.log',
+  #filename='./logs/app.log',
   format='%(asctime)s - %(levelname)s - %(message)s',
   level=logging.INFO
   )
